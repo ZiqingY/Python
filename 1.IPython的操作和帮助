@@ -1,0 +1,59 @@
+1.2~3 Ipython帮助和文档
+用符号?获取文档：每一个Python对象都有一个字符串的引用（docstring），几乎适用于一切
+用??获取源代码
+用Tab补全的方式探索模块：object.<TAB>  
+						 object._<TAB>
+						 from ... import co<TAB>
+						 *Warning?  	搜索以Warning结尾的所有对象
+						 str.*Warning*? 搜索名称含有Warning的对象
+一些快捷键：如Ctrl+p获取前一个历史命令，Ctrl+p获取后一个历史命令，Ctrl+r搜索命令历史
+
+
+1.4 Ipython魔法命令
+%paste		帮助执行复制的代码
+%cpaste		帮助执行多分复制的代码块
+%run		执行外部代码(.py)
+%timeit		计算代码运行时间
+%history	一次性获取此前所有的In历史
+%magic		获得魔法函数的通用描述
+代码分析的魔法命令:		%prun		分析整个脚本, 输出结果表格	
+						%lprun		要先安装line_profiler包, 再%load_ext line_profiler载入
+									然后就可以运行%lprun, 对所有函数进行逐行分析
+						%memit		要先安装memory_profiler包, 再一样load之
+									进行内存分析
+						%mprun		对逐行代码的内存消耗进行分析; 但只能用于独立模块(.py)
+
+1.5 In and Out
+In对象是一个list；Out是一个dic；都可以调用
+不是所有操作都有Out
+调出倒数第一二三个历史输出：print(_) print(__) print(___)
+Out[X]的简写形式是_X
+
+
+1.6 shell命令（cmd）
+前缀!让IPython执行任何命令行命令，如:  !ls  
+									   !pwd  
+									   !echo "hello world"
+在shell中传出值到IPython，如:	contents = !ls 
+							    directory = !pwd
+								这些结果都不是list类型
+传入值到shell，	如:	message = "hello from shell"
+					!echo {message}
+
+
+1.7 与shell相关的魔法命令
+%cd			导航文件
+%automagic	打开/关闭自动魔法函数，接下来的代码都不需要加%
+其他shell魔法命令：
+%cat	%cp		%env	%ls		%man	%mkdir		%more	%mv		%rm		%rmdir	
+
+
+1.8 错误和调试
+%xmode Plain		设置输出的错误报告形式，参数为Plain/Context/Verbose
+					设置完后再执行错误语句即可看到该类型的错误报告
+%debug				开启调试界面,可以在其中进行调试, 运行python命令
+					部分调试命令: list	 help	quit	continue	next	enter	print	
+
+
+
+
